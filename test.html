@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [
+        [1, 2],
+        [3, 4]
+      ];
+
+      let answer = [];
+
+      if (arr.length > arr[0].length) {
+        for (let i = 0; i < arr.length; i++) {
+          const newArr = [...arr[i]];
+          for (let j = arr[0].length; j < arr.length; j++) {
+            newArr.push(0);
+          }
+          answer.push(newArr);
+        }
+      } else if (arr.length < arr[0].length) {
+        for (let i = 0; i < arr[0].length; i++) {
+          if (arr[i]) {
+            answer.push(arr[i]);
+          } else {
+            const newArr = new Array(arr[0].length).fill(0);
+            answer.push(newArr);
+          }
+        }
+      } else {
+        answer = arr;
+      }
+
+      console.log(answer);
+    </script>
+  </body>
+</html>
