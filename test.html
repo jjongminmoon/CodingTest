@@ -8,33 +8,14 @@
   </head>
   <body>
     <script>
-      const arr = [
-        [1, 2],
-        [3, 4]
-      ];
-
       let answer = [];
 
-      if (arr.length > arr[0].length) {
-        for (let i = 0; i < arr.length; i++) {
-          const newArr = [...arr[i]];
-          for (let j = arr[0].length; j < arr.length; j++) {
-            newArr.push(0);
-          }
-          answer.push(newArr);
-        }
-      } else if (arr.length < arr[0].length) {
-        for (let i = 0; i < arr[0].length; i++) {
-          if (arr[i]) {
-            answer.push(arr[i]);
-          } else {
-            const newArr = new Array(arr[0].length).fill(0);
-            answer.push(newArr);
-          }
-        }
-      } else {
-        answer = arr;
-      }
+      const array = [1, 8, 3];
+      const maxNum = Math.max(...array);
+      const maxNumIdx = array.indexOf(maxNum);
+
+      answer.push(maxNum);
+      answer.push(maxNumIdx);
 
       console.log(answer);
     </script>
