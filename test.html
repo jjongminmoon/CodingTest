@@ -9,26 +9,23 @@
   <body>
     <script>
       let answer = 0;
-      const numbers = "onefourzerosixseven";
-      const arr = {
-        zero: 0,
-        one: 1,
-        two: 2,
-        three: 3,
-        four: 4,
-        five: 5,
-        six: 6,
-        seven: 7,
-        eight: 8,
-        nine: 9
-      };
+      const lines = [
+        [0, 5],
+        [3, 9],
+        [1, 10]
+      ];
 
-      // const num = numbers.replace(/zero|one|two|three|four|five|six|seven|eight|nine/g, (i) => {
-      //   return answer[i];
-      // });
+      for (let i = 0; i < lines.length; i++) {
+        let obj = {};
+        for (let j = lines[i][0]; j < lines[i][1]; j++) {
+          let key = String(j) + (j + 1);
+          obj[key] = obj[key] ? 2 : 1;
+        }
 
-      answer = numbers.replace(/zero|one|two|three|four|five|six|seven|eight|nine/g, (i) => arr[i]);
+        return obj;
+      }
 
+      console.log(obj);
       console.log(answer);
     </script>
   </body>
