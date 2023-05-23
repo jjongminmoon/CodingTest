@@ -9,23 +9,14 @@
   <body>
     <script>
       let answer = 0;
-      const lines = [
-        [0, 5],
-        [3, 9],
-        [1, 10]
-      ];
+      const n = 12;
 
-      for (let i = 0; i < lines.length; i++) {
-        let obj = {};
-        for (let j = lines[i][0]; j < lines[i][1]; j++) {
-          let key = String(j) + (j + 1);
-          obj[key] = obj[key] ? 2 : 1;
+      for (let i = 2; i <= n; i++) {
+        for (let j = i + 1; j <= n j++) {
+        
         }
-
-        return obj;
       }
 
-      console.log(obj);
       console.log(answer);
     </script>
   </body>
