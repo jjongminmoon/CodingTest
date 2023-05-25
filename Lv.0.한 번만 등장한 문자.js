@@ -9,3 +9,5 @@ function solution(s) {
 
   return answer.sort().join("");
 }
+
+// 다른 사람의 풀이 확인 시에도 동일한 코드
