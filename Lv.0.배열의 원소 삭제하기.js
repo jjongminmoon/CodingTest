@@ -12,3 +12,6 @@ function solution(arr, delete_list) {
 
   return answer;
 }
+
+// 다른 사람 풀이
+const solution = (arr, dels) => arr.filter((el) => !dels.includes(el));

@@ -16,3 +16,9 @@ function solution(chicken) {
 
   return answer;
 }
+
+// 다른 사람의 풀이 : ...
+function solution(chicken) {
+  var answer = parseInt((chicken - 1) / 9);
+  return answer;
+}
