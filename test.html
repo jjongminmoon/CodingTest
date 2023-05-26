@@ -8,18 +8,21 @@
   </head>
   <body>
     <script>
-      const numbers = [1, 2, 3, 4];
-      const k = 2;
-      let count = 0;
-      let i = 0;
+      let answer = 0;
+      const balls = 3;
+      const share = 2;
 
-      while (true) {
-        count++;
-        i = i + 2;
-        if (count < k) break;
-      }
+      const factorial = (num) => {
+        if (num < 0) {
+          return -1;
+        } else if (num === 0) {
+          return 1;
+        } else {
+          return num * factorial(num - 1);
+        }
+      };
 
-      answer = numbers[i];
+      answer = factorial(balls) / (factorial(balls - share) * factorial(share));
 
       console.log(answer);
     </script>
