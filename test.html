@@ -9,20 +9,20 @@
   <body>
     <script>
       let answer = 0;
-      const balls = 3;
-      const share = 2;
+      let hp = 24;
 
-      const factorial = (num) => {
-        if (num < 0) {
-          return -1;
-        } else if (num === 0) {
-          return 1;
-        } else {
-          return num * factorial(num - 1);
+      while (hp > 0) {
+        if (hp < 3) {
+          hp--;
+          answer++;
+        } else if (hp < 5) {
+          hp = hp - 3;
+          answer++;
+        } else if (hp >= 5) {
+          hp = hp - 5;
+          answer++;
         }
-      };
-
-      answer = factorial(balls) / (factorial(balls - share) * factorial(share));
+      }
 
       console.log(answer);
     </script>
