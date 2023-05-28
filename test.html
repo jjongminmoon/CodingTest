@@ -8,21 +8,13 @@
   </head>
   <body>
     <script>
-      let answer = 0;
-      let hp = 24;
+      let answer = [];
+      const emergency = [3, 76, 24];
 
-      while (hp > 0) {
-        if (hp < 3) {
-          hp--;
-          answer++;
-        } else if (hp < 5) {
-          hp = hp - 3;
-          answer++;
-        } else if (hp >= 5) {
-          hp = hp - 5;
-          answer++;
-        }
-      }
+      const sorted = emergency.slice().sort((a, b) => b - a);
+      answer = emergency.map((el) => sorted.indexOf(el) + 1);
+
+      console.log(sorted);
 
       console.log(answer);
     </script>
