@@ -8,26 +8,20 @@
   </head>
   <body>
     <script>
-      const players = ["mumu", "soe", "poe", "kai", "mine"];
-      const callings = ["kai", "kai", "mine", "mine"];
-      let answer = [...players];
-      const playerMap = {};
+      const s = "banana";
+      const map = new Map();
+      let answer = [];
 
-      for (let i = 0; i < players.length; i++) {
-        playerMap[players[i]] = i;
-      }
+      [...s].map((el, i) => {
+        console.log(map);
+        if (!map.has(el)) {
+          answer.push(-1);
+        } else {
+          answer.push(i - map.get(el));
+        }
+        map.set(el, i);
+      });
 
-      for (let i = 0; i < callings.length; i++) {
-        const callPlayer = callings[i];
-        const callIdx = playerMap[callPlayer];
-        const prevIdx = callIdx - 1;
-        const prevPlayer = answer[prevIdx];
-
-        [answer[callIdx], answer[prevIdx]] = [prevPlayer, callPlayer];
-        [playerMap[callPlayer], playerMap[prevPlayer]] = [prevIdx, callIdx];
-      }
-
-      console.log(playerMap);
       console.log(answer);
     </script>
   </body>
