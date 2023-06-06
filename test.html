@@ -8,19 +8,22 @@
   </head>
   <body>
     <script>
-      const s = "banana";
-      const map = new Map();
+      const n = 10;
       let answer = [];
 
-      [...s].map((el, i) => {
-        console.log(map);
-        if (!map.has(el)) {
-          answer.push(-1);
-        } else {
-          answer.push(i - map.get(el));
+      function isPrime(n) {
+        for (let x of answer) {
+          if (x > Math.sqrt(n)) return true;
+          if (Number.isInteger(n / x)) return false;
         }
-        map.set(el, i);
-      });
+        return true;
+      }
+
+      for (let i = 2; i <= n; i++) {
+        if (isPrime(i)) answer.push(i);
+      }
+
+      console.log(isPrime(3));
 
       console.log(answer);
     </script>
