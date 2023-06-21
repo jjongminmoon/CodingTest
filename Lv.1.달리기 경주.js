@@ -19,3 +19,10 @@ function solution(players, callings) {
 
   return answer;
 }
+
+// 다른 사람 풀이
+var solution = (_, $) =>
+  _.find(
+    (_) => !$[_]--,
+    $.map((_) => ($[_] = ($[_] | 0) + 1))
+  );

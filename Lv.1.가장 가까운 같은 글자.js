@@ -15,3 +15,14 @@ function solution(s) {
 
   return answer;
 }
+
+// 다른 사람 풀이
+function solution(s) {
+  const hash = {};
+
+  return [...s].map((v, i) => {
+    let result = hash[v] !== undefined ? i - hash[v] : -1;
+    hash[v] = i;
+    return result;
+  });
+}
