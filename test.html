@@ -8,14 +8,32 @@
   </head>
   <body>
     <script>
-      const numbers = [1, 2, 3, 4, 6, 7, 8, 0];
-      let answer = 0;
+      const s = "one4seveneight";
+      let answer = s;
+      const numObj = {
+        zero: 0,
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6,
+        seven: 7,
+        eight: 8,
+        nine: 9
+      };
 
-      for (let i = 0; i <= 9; i++) {
-        numbers.includes(i) ? null : (answer += i);
-      }
+      const alphabet = Object.keys(numObj);
+      const number = Object.values(numObj);
 
-      console.log(answer);
+      alphabet.forEach((alphabet, idx) => {
+        console.log(alphabet);
+        const regex = new RegExp(alphabet, "gi");
+        console.log(regex);
+        answer = answer.replace(regex, number[idx]);
+      });
+
+      console.log(Number(answer));
     </script>
   </body>
 </html>
