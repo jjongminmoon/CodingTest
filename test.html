@@ -8,32 +8,21 @@
   </head>
   <body>
     <script>
-      const s = "one4seveneight";
-      let answer = s;
-      const numObj = {
-        zero: 0,
-        one: 1,
-        two: 2,
-        three: 3,
-        four: 4,
-        five: 5,
-        six: 6,
-        seven: 7,
-        eight: 8,
-        nine: 9
-      };
+      let answer = 0;
+      const k = 4;
+      const m = 3;
+      const score = [4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2];
 
-      const alphabet = Object.keys(numObj);
-      const number = Object.values(numObj);
+      const sortArr = score.sort((a, b) => b - a);
 
-      alphabet.forEach((alphabet, idx) => {
-        console.log(alphabet);
-        const regex = new RegExp(alphabet, "gi");
-        console.log(regex);
-        answer = answer.replace(regex, number[idx]);
-      });
+      for (let i = m - 1; i < sortArr.length; ) {
+        console.log(i);
+        answer += sortArr[i] * m;
+        i = i + m;
+      }
 
-      console.log(Number(answer));
+      console.log(sortArr);
+      console.log(answer);
     </script>
   </body>
 </html>

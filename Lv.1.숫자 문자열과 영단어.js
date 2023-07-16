@@ -23,3 +23,5 @@ function solution(s) {
 
   return Number(answer);
 }
+
+// 알파벳 키 값들을 forEach 문을 통해 정규표현식을 반복해서 해당 문자열을 replace 함수로 변경
