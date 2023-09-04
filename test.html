@@ -9,20 +9,18 @@
   <body>
     <script>
       let answer = 0;
-      const k = 4;
-      const m = 3;
-      const score = [4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2];
 
-      const sortArr = score.sort((a, b) => b - a);
+      const price = 3;
+      const money = 20;
+      const count = 4;
+      const result = 10;
+      let totalPrice = 0;
 
-      for (let i = m - 1; i < sortArr.length; ) {
-        console.log(i);
-        answer += sortArr[i] * m;
-        i = i + m;
+      for (let i = 1; i <= count; i++) {
+        totalPrice += price * i;
       }
 
-      console.log(sortArr);
-      console.log(answer);
+      answer = money < totalPrice ? totalPrice - money : 0;
     </script>
   </body>
 </html>
