@@ -8,19 +8,30 @@
   </head>
   <body>
     <script>
+      const sizes = [
+        [60, 50],
+        [30, 70],
+        [60, 30],
+        [80, 40]
+      ];
+
       let answer = 0;
 
-      const price = 3;
-      const money = 20;
-      const count = 4;
-      const result = 10;
-      let totalPrice = 0;
+      const [shortArr, longArr] = sizes.reduce(
+        (prev, cur) => {
+          prev[0].push(Math.min(cur[0], cur[1]));
+          prev[1].push(Math.max(cur[0], cur[1]));
 
-      for (let i = 1; i <= count; i++) {
-        totalPrice += price * i;
-      }
+          return prev;
+        },
+        [[], []]
+      );
 
-      answer = money < totalPrice ? totalPrice - money : 0;
+      answer = Math.max(...shortArr) * Math.max(...longArr);
+
+      console.log(shortArr);
+      console.log(longArr);
+      console.log(answer);
     </script>
   </body>
 </html>
