@@ -8,30 +8,15 @@
   </head>
   <body>
     <script>
-      const sizes = [
-        [60, 50],
-        [30, 70],
-        [60, 30],
-        [80, 40]
-      ];
+      const my_string = "banana";
+      const is_prefix = "ban";
+      let prefixArr = [];
 
-      let answer = 0;
+      for (let i = 0; i < my_string.length; i++) {
+        prefixArr.push(my_string.slice(0, i + 1));
+      }
 
-      const [shortArr, longArr] = sizes.reduce(
-        (prev, cur) => {
-          prev[0].push(Math.min(cur[0], cur[1]));
-          prev[1].push(Math.max(cur[0], cur[1]));
-
-          return prev;
-        },
-        [[], []]
-      );
-
-      answer = Math.max(...shortArr) * Math.max(...longArr);
-
-      console.log(shortArr);
-      console.log(longArr);
-      console.log(answer);
+      console.log(prefixArr);
     </script>
   </body>
 </html>
