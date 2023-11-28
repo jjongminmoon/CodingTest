@@ -8,15 +8,23 @@
   </head>
   <body>
     <script>
-      const my_string = "banana";
-      const is_prefix = "ban";
-      let prefixArr = [];
+      const n = 5;
+      const lost = [2, 4];
+      const reverse = [3];
+      let answer = 0;
 
-      for (let i = 0; i < my_string.length; i++) {
-        prefixArr.push(my_string.slice(0, i + 1));
-      }
+      const realLost = lost.filter((a) => !reverse.includes(a));
+      const realReverse = reverse.filter((a) => !lost.includes(a));
 
-      console.log(prefixArr);
+      answer =
+        n -
+        realLost.filter((a) => {
+          let b = realReverse.find((r) => Math.abs(r - a) <= 1);
+          if (!b) return true;
+          realReverse = realReverse.filter((r) => r !== b);
+        }).length;
+
+      console.log(realLost);
     </script>
   </body>
 </html>
