@@ -8,23 +8,8 @@
   </head>
   <body>
     <script>
-      const n = 5;
-      const lost = [2, 4];
-      const reverse = [3];
-      let answer = 0;
-
-      const realLost = lost.filter((a) => !reverse.includes(a));
-      const realReverse = reverse.filter((a) => !lost.includes(a));
-
-      answer =
-        n -
-        realLost.filter((a) => {
-          let b = realReverse.find((r) => Math.abs(r - a) <= 1);
-          if (!b) return true;
-          realReverse = realReverse.filter((r) => r !== b);
-        }).length;
-
-      console.log(realLost);
+      const N = 5;
+      const stages = [2, 1, 2, 6, 2, 4, 3, 3];
     </script>
   </body>
 </html>
